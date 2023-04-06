@@ -1,8 +1,9 @@
 package com.devops.practice;
 import static org.junit.Assert.*;
-//import static org.mockito.Mockito.*;
+
+import static org.mockito.Mockito.*;
 import org.junit.Test;
-//import java.util.List;
+import java.util.List;
 
 
 public class PersonTest {
@@ -38,11 +39,12 @@ public class PersonTest {
         assertEquals(person.getCountry(), "Papua");
     }
     
-//    @Test 
-//    public void testWithAMock() {
-//    	List<String> mockList = Mockito.mock(List.class);
-//		when(mockList.size()).thenReturn(5);
-//		assertTrue(mockList.size()==5);
-//    }
+    @Test
+    public void testUsingMock() {
+    	// using Mockito.mock() method
+    			List<String> mockList = mock(List.class);
+    			when(mockList.size()).thenReturn(5);
+    			assertTrue(mockList.size()==5);
+    }
 
 }

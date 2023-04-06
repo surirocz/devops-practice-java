@@ -41,10 +41,18 @@ public class PersonTest {
     
     @Test
     public void testUsingMock() {
-    	// using Mockito.mock() method
-    			List<String> mockList = mock(List.class);
-    			when(mockList.size()).thenReturn(5);
-    			assertTrue(mockList.size()==5);
+    	// Here the list class size and get methods are mocked.
+    	List<String> testList = mock(List.class);
+    	testList.add("item 1");
+    	testList.add("Item 2");
+    	when(testList.size()).thenReturn(2);
+    	assertEquals(2, testList.size());
+    	
+    	when(testList.get(0)).thenReturn("item 1");
+    	when(testList.get(1)).thenReturn("item 2");
+    	
+    	assertEquals("item 1", testList.get(0));
+    	assertEquals("item 2", testList.get(1));
     }
 
 }
